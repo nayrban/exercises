@@ -6,6 +6,9 @@ public class Stack {
     private int [] elements;
 
     public Stack(int maxCapacity) {
+        if (maxCapacity < 0)
+            throw new IllegalArgumentException("Invalid capacity" + maxCapacity);
+
         this.elements = new int[maxCapacity];
     }
 

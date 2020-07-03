@@ -45,10 +45,14 @@ public class StackTest {
         assertEquals(1, stack.pop());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void createStack_WithInvalidCapacity() {
+        this.stack = new Stack(-1);
+    }
+
     @Test(expected = Stack.Overflow.class)
     public void createStackWithCapacity_ThenExpectAdException() {
-        this.stack = new Stack(1);
+        this.stack = new Stack(0);
         stack.push(0);
-        stack.push(2);
     }
 }
