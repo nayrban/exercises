@@ -32,16 +32,7 @@ public class StackTest {
         assertTrue(stack.isEmpty());
     }
 
-    @Test
-    public void pushTwice_Pop_ThenIsEmpty() {
-        stack.push(23);
-        stack.push(23);
-        stack.pop();
-
-        assertFalse(stack.isEmpty());
-    }
-
-    @Test(expected = Stack.EmptyStack.class)
+    @Test(expected = Stack.Undeflow.class)
     public void pop_ThenExpectAndException() {
         stack.pop();
     }
@@ -54,4 +45,10 @@ public class StackTest {
         assertEquals(1, stack.pop());
     }
 
+    @Test(expected = Stack.Overflow.class)
+    public void createStackWithCapacity_ThenExpectAdException() {
+        this.stack = new Stack(1);
+        stack.push(0);
+        stack.push(2);
+    }
 }
