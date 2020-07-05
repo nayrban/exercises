@@ -32,7 +32,7 @@ public class StackTest {
         assertTrue(stack.isEmpty());
     }
 
-    @Test(expected = Stack.Undeflow.class)
+    @Test(expected = Stack.Underflow.class)
     public void pop_ThenExpectAndException() {
         stack.pop();
     }

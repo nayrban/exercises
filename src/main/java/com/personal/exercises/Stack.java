@@ -29,12 +29,12 @@ public class Stack {
 
     public int pop() {
         if (isEmpty())
-            throw new Undeflow();
+            throw new Underflow();
 
         return this.elements[--this.size];
     }
 
-    public class Undeflow extends RuntimeException {
+    public class Underflow extends RuntimeException {
     }
 
     public class Overflow extends RuntimeException {
